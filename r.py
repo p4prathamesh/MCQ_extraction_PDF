@@ -10,7 +10,8 @@ for i in range(0,l):
 	questions = re.compile(r'^[0-9]. *')
 	mcq = re.compile(r'^[(][0-9][)] *')
 	sol = re.compile(r'^[S][o][l][.] *')
+	r = re.compile(r'^[R][ ][:] *')
 	for line in text.split('\n'):
-		if questions.match(line) or mcq.match(line) or sol.match(line):
+		if questions.match(line) or mcq.match(line) or sol.match(line) or r.match(line):
 			print(line)
 	
